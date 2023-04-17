@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace AtonTalent.Domain.Dtos
 {
-    internal class UserCreateDto
+    public class UserCreateDto
     {
+        public string Login { get; init; }
+
+        public string Password { get; init; }
+
+        public string Name { get; init; }
+
+        public int Gender { get; init; }
+
+        public bool IsAdmin { get; init; }
     }
 }

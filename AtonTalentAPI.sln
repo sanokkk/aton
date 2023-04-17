@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtonTalentAPI", "AtonTalentAPI\AtonTalentAPI.csproj", "{719B216B-AB0D-44F4-A6ED-037B73144CF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtonTalentAPI", "AtonTalentAPI\AtonTalentAPI.csproj", "{719B216B-AB0D-44F4-A6ED-037B73144CF4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AtonTalent.Domain", "AtonTalent.Domain", "{1A2C5CE4-770E-4D56-87FC-CE0F1AFE79A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtonTalent.Domain", "AtonTalent.Domain\AtonTalent.Domain.csproj", "{76910144-5A46-4864-A5A1-64D132B0F98C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtonTalent.Domain", "AtonTalent.Domain\AtonTalent.Domain.csproj", "{76910144-5A46-4864-A5A1-64D132B0F98C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AtonTalent.DAL", "AtonTalent.DAL", "{55DC7277-7195-4F13-9E18-C78F150BEE31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtonTalent.DAL", "AtonTalent.DAL\AtonTalent.DAL.csproj", "{AC7DE90A-8ADA-4F38-82F9-4F7EBDF3ACA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtonTalent.DAL", "AtonTalent.DAL\AtonTalent.DAL.csproj", "{AC7DE90A-8ADA-4F38-82F9-4F7EBDF3ACA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AtonTalent.Services", "AtonTalent.Services", "{F6A1F435-ADC1-456B-9AEF-C9A4CAFA9847}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtonTalent.Services", "AtonTalent.Services\AtonTalent.Services.csproj", "{A08C9DB6-0D21-45A2-B674-0DF91CD000C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +35,10 @@ Global
 		{AC7DE90A-8ADA-4F38-82F9-4F7EBDF3ACA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC7DE90A-8ADA-4F38-82F9-4F7EBDF3ACA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC7DE90A-8ADA-4F38-82F9-4F7EBDF3ACA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A08C9DB6-0D21-45A2-B674-0DF91CD000C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A08C9DB6-0D21-45A2-B674-0DF91CD000C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A08C9DB6-0D21-45A2-B674-0DF91CD000C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A08C9DB6-0D21-45A2-B674-0DF91CD000C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +46,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{76910144-5A46-4864-A5A1-64D132B0F98C} = {1A2C5CE4-770E-4D56-87FC-CE0F1AFE79A9}
 		{AC7DE90A-8ADA-4F38-82F9-4F7EBDF3ACA8} = {55DC7277-7195-4F13-9E18-C78F150BEE31}
+		{A08C9DB6-0D21-45A2-B674-0DF91CD000C9} = {F6A1F435-ADC1-456B-9AEF-C9A4CAFA9847}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A31325BE-511A-46B8-B9A5-66F96ED65491}
