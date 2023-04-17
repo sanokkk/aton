@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AtonTalent.Services
+namespace AtonTalent.Services.Interfaces
 {
-    internal class UserService
+    internal interface IUserService
     {
     }
 }

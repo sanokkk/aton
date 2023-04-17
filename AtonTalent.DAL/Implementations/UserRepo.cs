@@ -1,5 +1,6 @@
 ﻿using AtonTalent.DAL.Interfaces;
 using AtonTalent.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,5 +22,14 @@ public class UserRepo : IUserRepo
     {
         _db.Users.Add(user);
         await _db.SaveChangesAsync();
+    }
+
+    public async Task<User> GetByLoginPassAsync(string login, string password, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        var response = await _db.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Login == login && u.Password == password);
+        if (response == null)
+            throw new ArgumentNullException(nameof(response));
+        return response;
     }
 }

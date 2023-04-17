@@ -10,5 +10,6 @@ namespace AtonTalent.DAL.Interfaces
     public interface IUserRepo
     {
         Task Add(User user);
+        Task<User> GetByLoginPassAsync(string login, string password, CancellationToken cancellationToken);
     }
 }

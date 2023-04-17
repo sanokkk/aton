@@ -20,7 +20,7 @@ namespace AtonTalent.Domain.Models
 
         public int Gender { get; init; }
 
-        public DateTime? Birtday { get; init; }
+        public DateTime? Birthday { get; init; }
 
         public bool Admin { get; init; }
 

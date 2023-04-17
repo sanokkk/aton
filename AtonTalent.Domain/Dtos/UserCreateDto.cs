@@ -16,6 +16,7 @@ namespace AtonTalent.Domain.Dtos
 
         public int Gender { get; init; }
 
+        public DateTime Birthday { get; init; }
         public bool IsAdmin { get; init; }
     }
 }
