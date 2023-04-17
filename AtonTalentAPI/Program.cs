@@ -1,6 +1,8 @@
 using AtonTalent.DAL;
 using AtonTalent.DAL.Implementations;
 using AtonTalent.DAL.Interfaces;
+using AtonTalent.Services.Interfaces;
+using AtonTalent.Services.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +21,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(o => o.UseNpgsql(builder.Con
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<IUserRepo, UserRepo>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

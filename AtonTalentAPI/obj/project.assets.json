@@ -439,6 +439,19 @@
         "runtime": {
           "bin/placeholder/AtonTalent.Domain.dll": {}
         }
+      },
+      "AtonTalent.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "AtonTalent.DAL": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AtonTalent.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AtonTalent.Services.dll": {}
+        }
       }
     }
   },
@@ -1284,11 +1297,17 @@
       "type": "project",
       "path": "../AtonTalent.Domain/AtonTalent.Domain.csproj",
       "msbuildProject": "../AtonTalent.Domain/AtonTalent.Domain.csproj"
+    },
+    "AtonTalent.Services/1.0.0": {
+      "type": "project",
+      "path": "../AtonTalent.Services/AtonTalent.Services.csproj",
+      "msbuildProject": "../AtonTalent.Services/AtonTalent.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "AtonTalent.DAL >= 1.0.0",
+      "AtonTalent.Services >= 1.0.0",
       "AutoMapper >= 12.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
       "Microsoft.AspNetCore.OpenApi >= 7.0.5",
@@ -1327,6 +1346,9 @@
           "projectReferences": {
             "C:\\Users\\san_okkk\\Desktop\\PROJECTS\\AtonTalentAPI\\AtonTalent.DAL\\AtonTalent.DAL.csproj": {
               "projectPath": "C:\\Users\\san_okkk\\Desktop\\PROJECTS\\AtonTalentAPI\\AtonTalent.DAL\\AtonTalent.DAL.csproj"
+            },
+            "C:\\Users\\san_okkk\\Desktop\\PROJECTS\\AtonTalentAPI\\AtonTalent.Services\\AtonTalent.Services.csproj": {
+              "projectPath": "C:\\Users\\san_okkk\\Desktop\\PROJECTS\\AtonTalentAPI\\AtonTalent.Services\\AtonTalent.Services.csproj"
             }
           }
         }

@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AtonTalent.DAL\AtonTalent.DAL.csproj" />
+    <ProjectReference Include="..\AtonTalent.Services\AtonTalent.Services.csproj" />
   </ItemGroup>
 
 </Project>
