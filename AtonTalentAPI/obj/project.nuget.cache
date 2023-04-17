@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "EfCR01oAE+fefG0458l+pOvPtLPoUE3F3JEyH0YIoYRCz3GTDfchdotxEtTwf0QI1AjCLkDk2jjXpgLDIsDGmA==",
+  "dgSpecHash": "yq5150rRxQlAtD8dCOAN+tLzlqIhVDcTw5+UuLeh707bqeAX63I/Dzb+F1lC8n6mLocsIfQx5R1cS4Jk7Mlwpw==",
   "success": true,
   "projectFilePath": "C:\\Users\\san_okkk\\Desktop\\PROJECTS\\AtonTalentAPI\\AtonTalentAPI\\AtonTalentAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\san_okkk\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\san_okkk\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\san_okkk\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
+    "C:\\Users\\san_okkk\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\san_okkk\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
     "C:\\Users\\san_okkk\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.5\\microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",
     "C:\\Users\\san_okkk\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.5\\microsoft.entityframeworkcore.analyzers.7.0.5.nupkg.sha512",
