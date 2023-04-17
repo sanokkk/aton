@@ -11,6 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+builder.Services.AddLogging(l =>
+{
+    l.AddConsole();
+});
+
 builder.Services.AddRouting(r =>
 {
     r.LowercaseQueryStrings = true;

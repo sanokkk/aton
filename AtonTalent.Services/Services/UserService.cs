@@ -18,7 +18,7 @@ namespace AtonTalent.Services.Services
             _userRepo = userRepo;
         }
 
-        public async Task CreateUserAsync(LoginDto currentUser, UserCreateDto userCreateDto, CancellationToken cancellationToken)
+        public async Task<User> CreateUserAsync(LoginDto currentUser, UserCreateDto userCreateDto, CancellationToken cancellationToken)
         {
             var userRequest = await _userRepo.GetByLoginPassAsync(currentUser.Login, currentUser.Password, cancellationToken);
 
@@ -36,9 +36,7 @@ namespace AtonTalent.Services.Services
             };
 
             await _userRepo.Add(createdUser);
-
-
-
+            return createdUser;
         }
     }
 }
