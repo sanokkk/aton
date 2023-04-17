@@ -1,0 +1,6 @@
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalentAPI\obj\Debug\net7.0\AtonTalentAPI.csproj.AssemblyReference.cache
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalentAPI\obj\Debug\net7.0\AtonTalentAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalentAPI\obj\Debug\net7.0\AtonTalentAPI.AssemblyInfoInputs.cache
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalentAPI\obj\Debug\net7.0\AtonTalentAPI.AssemblyInfo.cs
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalentAPI\obj\Debug\net7.0\AtonTalentAPI.csproj.CoreCompileInputs.cache
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalentAPI\obj\Debug\net7.0\AtonTalentAPI.MvcApplicationPartsAssemblyInfo.cache

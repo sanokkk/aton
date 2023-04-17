@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8BLAaXTCnHudVVN6miI64jGT4pHr0zWTh13DAgsnoco8ozJb6KxKIaGffVbZNLkY5vSL6YCP4iADaX53Wy4TUg==",
+  "dgSpecHash": "EfCR01oAE+fefG0458l+pOvPtLPoUE3F3JEyH0YIoYRCz3GTDfchdotxEtTwf0QI1AjCLkDk2jjXpgLDIsDGmA==",
   "success": true,
   "projectFilePath": "C:\\Users\\san_okkk\\Desktop\\PROJECTS\\AtonTalentAPI\\AtonTalentAPI\\AtonTalentAPI.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,7 @@
     "C:\\Users\\san_okkk\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
     "C:\\Users\\san_okkk\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.5\\microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",
     "C:\\Users\\san_okkk\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.5\\microsoft.entityframeworkcore.analyzers.7.0.5.nupkg.sha512",
-    "C:\\Users\\san_okkk\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.3\\microsoft.entityframeworkcore.relational.7.0.3.nupkg.sha512",
+    "C:\\Users\\san_okkk\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.5\\microsoft.entityframeworkcore.relational.7.0.5.nupkg.sha512",
     "C:\\Users\\san_okkk\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\san_okkk\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\san_okkk\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",

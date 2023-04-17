@@ -1,0 +1,12 @@
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Domain\bin\Debug\net7.0\AtonTalent.Domain.deps.json
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Domain\bin\Debug\net7.0\AtonTalent.Domain.dll
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Domain\bin\Debug\net7.0\AtonTalent.Domain.pdb
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Domain\obj\Debug\net7.0\AtonTalent.Domain.csproj.AssemblyReference.cache
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Domain\obj\Debug\net7.0\AtonTalent.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Domain\obj\Debug\net7.0\AtonTalent.Domain.AssemblyInfoInputs.cache
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Domain\obj\Debug\net7.0\AtonTalent.Domain.AssemblyInfo.cs
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Domain\obj\Debug\net7.0\AtonTalent.Domain.csproj.CoreCompileInputs.cache
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Domain\obj\Debug\net7.0\AtonTalent.Domain.dll
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Domain\obj\Debug\net7.0\refint\AtonTalent.Domain.dll
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Domain\obj\Debug\net7.0\AtonTalent.Domain.pdb
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Domain\obj\Debug\net7.0\ref\AtonTalent.Domain.dll
