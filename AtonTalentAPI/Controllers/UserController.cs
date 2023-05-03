@@ -1,4 +1,5 @@
-﻿using AtonTalent.Domain.Dtos;
+﻿using AtonTalent.Domain.ComplexRequests;
+using AtonTalent.Domain.Dtos;
 using AtonTalent.Domain.Models;
 using AtonTalent.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -19,13 +20,13 @@ namespace AtonTalentAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAsync(LoginDto currentUser, UserCreateDto userCreateDto, CancellationToken cancellationToken)
+        public async Task<IActionResult> CreateAsync(CancellationToken cancellationToken,CreateRequest request)
         {
             cancellationToken.ThrowIfCancellationRequested();
             var response = new Response<User>();
             try
             {
-                response.Content = await _userService.CreateUserAsync(currentUser, userCreateDto, cancellationToken);
+                response.Content = await _userService.CreateUserAsync(request.currentUser, request.userCreateDto, cancellationToken);
             }
             catch (Exception ex)
             {
@@ -37,15 +38,15 @@ namespace AtonTalentAPI.Controllers
             return BadRequest();
         }
 
-        [HttpPut]
-        public async Task<IActionResult> UpdateAsync(LoginDto currentUser, UpdateUserDto updateModel, Guid id, CancellationToken cancellationToken)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateAsync(UpdateRequest request, Guid id, CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
             var response = new Response<User>();
             try
             {
-                response.Content = await _userService.UpdateAsync(currentUser, updateModel, id, cancellationToken);
+                response.Content = await _userService.UpdateAsync(request.currentUser, request.updateModel, id, cancellationToken);
             }
             catch(Exception ex)
             {
