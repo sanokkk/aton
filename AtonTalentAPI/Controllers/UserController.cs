@@ -35,8 +35,26 @@ namespace AtonTalentAPI.Controllers
             if (response.Success)
                 return Ok(response.Content);
             return BadRequest();
+        }
 
+        [HttpPut]
+        public async Task<IActionResult> UpdateAsync(LoginDto currentUser, UpdateUserDto updateModel, Guid id, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
 
+            var response = new Response<User>();
+            try
+            {
+                response.Content = await _userService.UpdateAsync(currentUser, updateModel, id, cancellationToken);
+            }
+            catch(Exception ex)
+            {
+                _logger.Log(LogLevel.Error, ex.Message);
+                response.Success = false;
+            }
+            if (response.Success)
+                return Ok(response.Content);
+            return BadRequest();
         }
     }
 }

@@ -21,7 +21,7 @@ namespace AtonTalent.Services.Services
         public async Task<User> CreateUserAsync(LoginDto currentUser, UserCreateDto userCreateDto, CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
-            var userRequest = await _userRepo.GetByLoginPassAsync(currentUser.Login, currentUser.Password, cancellationToken);
+            var userRequest = await _userRepo.GetByLoginPassAsync(currentUser, cancellationToken);
 
             var createdUser = new User()
             {
@@ -38,6 +38,26 @@ namespace AtonTalent.Services.Services
 
             await _userRepo.Add(createdUser);
             return createdUser;
+        }
+
+        public async Task<User> UpdateAsync(LoginDto currentUser, UpdateUserDto updateModel, Guid id, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var userRequested = await _userRepo.GetByLoginPassAsync(currentUser, cancellationToken);
+
+            var user = await _userRepo.GetByIdAsync(id);
+
+            if (userRequested.Admin || userRequested.Id == user.Id)
+            {
+                await _userRepo.UpdateAsync(updateModel, user, cancellationToken);
+                return user;
+            }
+
+            else
+            {
+                throw new Exception($"User: {currentUser.Login} has no access.");
+            }
         }
     }
 }

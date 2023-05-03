@@ -1,4 +1,5 @@
-﻿using AtonTalent.Domain.Models;
+﻿using AtonTalent.Domain.Dtos;
+using AtonTalent.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,9 @@ namespace AtonTalent.DAL.Interfaces
     public interface IUserRepo
     {
         Task Add(User user);
-        Task<User> GetByLoginPassAsync(string login, string password, CancellationToken cancellationToken);
+        Task<User> GetByLoginPassAsync(LoginDto login, CancellationToken cancellationToken);
+        Task UpdateAsync(UpdateUserDto updateModel, User user, CancellationToken cancellationToken);
+
+        Task<User> GetByIdAsync(Guid id);
     }
 }

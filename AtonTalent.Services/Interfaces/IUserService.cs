@@ -11,5 +11,7 @@ namespace AtonTalent.Services.Interfaces
     public interface IUserService
     {
         Task<User> CreateUserAsync(LoginDto currentUser, UserCreateDto userCreateDto, CancellationToken cancellationToken);
+
+        Task<User> UpdateAsync(LoginDto currentUser, UpdateUserDto updateModel, Guid id, CancellationToken cancellationToken);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AtonTalent.DAL.Interfaces;
+using AtonTalent.Domain.Dtos;
 using AtonTalent.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -24,12 +25,30 @@ public class UserRepo : IUserRepo
         await _db.SaveChangesAsync();
     }
 
-    public async Task<User> GetByLoginPassAsync(string login, string password, CancellationToken cancellationToken)
+    public async Task<User> GetByIdAsync(Guid id) => await _db.Users.FirstOrDefaultAsync(f => f.Id == id);
+   
+
+    public async Task<User> GetByLoginPassAsync(LoginDto login, CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
-        var response = await _db.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Login == login && u.Password == password);
+        var response = await _db.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Login == login.Login && u.Password == login.Password);
         if (response == null)
             throw new ArgumentNullException(nameof(response));
         return response;
+    }
+
+    public async Task UpdateAsync(UpdateUserDto updateModel, User user, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        user.Name = updateModel.Name ?? user.Name;
+        user.Gender = updateModel.Gender ?? user.Gender;
+        user.Birthday = updateModel.Birthday ?? user.Birthday;
+
+        await _db.SaveChangesAsync();
+    }
+
+    public Task UpdateAsync(UpdateUserDto updateModel, User user)
+    {
+        throw new NotImplementedException();
     }
 }

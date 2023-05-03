@@ -11,5 +11,12 @@ namespace AtonTalent.Domain.Models
         public bool Success { get; set; }
 
         public T? Content { get; set; }
+
+        public Response()
+        {
+            Success = true;
+        }
     }
+
+    
 }

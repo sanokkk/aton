@@ -16,11 +16,11 @@ namespace AtonTalent.Domain.Models
 
         public string Password { get; init; }
 
-        public string Name { get; init; }
+        public string Name { get; set; }
 
-        public int Gender { get; init; }
+        public int Gender { get; set; }
 
-        public DateTime? Birthday { get; init; }
+        public DateTime? Birthday { get; set; }
 
         public bool Admin { get; init; }
 
@@ -32,8 +32,8 @@ namespace AtonTalent.Domain.Models
 
         public string ModifiedBy { get; init;}
 
-        public DateTime RevokedOn { get; init; }
+        public DateTime RevokedOn { get; set; }
 
-        public string RevokedBy { get; init;}
+        public string RevokedBy { get; set;}
     }
 }
