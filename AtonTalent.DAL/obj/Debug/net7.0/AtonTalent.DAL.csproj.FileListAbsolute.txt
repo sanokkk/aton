@@ -3,3 +3,15 @@ C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.DAL\obj\Debug\net7.0
 C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.DAL\obj\Debug\net7.0\AtonTalent.DAL.AssemblyInfoInputs.cache
 C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.DAL\obj\Debug\net7.0\AtonTalent.DAL.AssemblyInfo.cs
 C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.DAL\obj\Debug\net7.0\AtonTalent.DAL.csproj.CoreCompileInputs.cache
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.DAL\bin\Debug\net7.0\AtonTalent.DAL.deps.json
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.DAL\bin\Debug\net7.0\AtonTalent.DAL.runtimeconfig.json
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.DAL\bin\Debug\net7.0\AtonTalent.DAL.dll
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.DAL\bin\Debug\net7.0\AtonTalent.DAL.pdb
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.DAL\bin\Debug\net7.0\AtonTalent.Domain.dll
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.DAL\bin\Debug\net7.0\AtonTalent.Domain.pdb
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.DAL\obj\Debug\net7.0\AtonTalent.DAL.csproj.CopyComplete
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.DAL\obj\Debug\net7.0\AtonTalent.DAL.dll
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.DAL\obj\Debug\net7.0\refint\AtonTalent.DAL.dll
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.DAL\obj\Debug\net7.0\AtonTalent.DAL.pdb
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.DAL\obj\Debug\net7.0\AtonTalent.DAL.genruntimeconfig.cache
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.DAL\obj\Debug\net7.0\ref\AtonTalent.DAL.dll

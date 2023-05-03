@@ -1,0 +1,17 @@
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\obj\Debug\net7.0\AtonTalent.Services.csproj.AssemblyReference.cache
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\obj\Debug\net7.0\AtonTalent.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\obj\Debug\net7.0\AtonTalent.Services.AssemblyInfoInputs.cache
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\obj\Debug\net7.0\AtonTalent.Services.AssemblyInfo.cs
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\obj\Debug\net7.0\AtonTalent.Services.csproj.CoreCompileInputs.cache
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\bin\Debug\net7.0\AtonTalent.Services.deps.json
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\bin\Debug\net7.0\AtonTalent.Services.dll
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\bin\Debug\net7.0\AtonTalent.Services.pdb
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\bin\Debug\net7.0\AtonTalent.DAL.dll
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\bin\Debug\net7.0\AtonTalent.Domain.dll
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\bin\Debug\net7.0\AtonTalent.DAL.pdb
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\bin\Debug\net7.0\AtonTalent.Domain.pdb
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\obj\Debug\net7.0\AtonTalent.Services.csproj.CopyComplete
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\obj\Debug\net7.0\AtonTalent.Services.dll
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\obj\Debug\net7.0\refint\AtonTalent.Services.dll
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\obj\Debug\net7.0\AtonTalent.Services.pdb
+C:\Users\san_okkk\Desktop\PROJECTS\AtonTalentAPI\AtonTalent.Services\obj\Debug\net7.0\ref\AtonTalent.Services.dll

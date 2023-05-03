@@ -28,7 +28,7 @@ namespace AtonTalent.DAL
                 Password = "password",
                 Name = "Alexander",
                 Gender = 1,
-                Birtday = new DateTime(year: 2002, month: 9, day: 18),
+                Birthday = new DateTime(year: 2002, month: 9, day: 18),
                 Admin = true,
                 CreatedOn = DateTime.Now,
                 CreatedBy = "sanokkk",
@@ -40,7 +40,7 @@ namespace AtonTalent.DAL
             modelBuilder.Entity<User>().Property(p => p.Password).HasColumnName(nameof(User.Password).ToLower());
             modelBuilder.Entity<User>().Property(p => p.Name).HasColumnName(nameof(User.Name).ToLower());
             modelBuilder.Entity<User>().Property(p => p.Gender).HasColumnName(nameof(User.Gender).ToLower());
-            modelBuilder.Entity<User>().Property(p => p.Birtday).HasColumnName(nameof(User.Birtday).ToLower());
+            modelBuilder.Entity<User>().Property(p => p.Birthday).HasColumnName(nameof(User.Birthday).ToLower());
             modelBuilder.Entity<User>().Property(p => p.Admin).HasColumnName(nameof(User.Admin).ToLower());
             modelBuilder.Entity<User>().Property(p => p.CreatedOn).HasColumnName(nameof(User.CreatedOn).ToLower());
             modelBuilder.Entity<User>().Property(p => p.CreatedBy).HasColumnName(nameof(User.CreatedBy).ToLower());
