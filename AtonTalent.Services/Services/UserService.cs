@@ -20,6 +20,7 @@ namespace AtonTalent.Services.Services
 
         public async Task<User> CreateUserAsync(LoginDto currentUser, UserCreateDto userCreateDto, CancellationToken cancellationToken)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             var userRequest = await _userRepo.GetByLoginPassAsync(currentUser.Login, currentUser.Password, cancellationToken);
 
             var createdUser = new User()

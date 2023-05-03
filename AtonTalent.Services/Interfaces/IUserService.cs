@@ -1,4 +1,5 @@
 ﻿using AtonTalent.Domain.Dtos;
+using AtonTalent.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace AtonTalent.Services.Interfaces
 {
     public interface IUserService
     {
-        Task CreateUserAsync(LoginDto currentUser, UserCreateDto userCreateDto, CancellationToken cancellationToken);
+        Task<User> CreateUserAsync(LoginDto currentUser, UserCreateDto userCreateDto, CancellationToken cancellationToken);
     }
 }

@@ -21,16 +21,22 @@ namespace AtonTalentAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAsync(LoginDto currentUser, UserCreateDto userCreateDto, CancellationToken cancellationToken)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             var response = new Response<User>();
-            User result;
             try
             {
-                result = await _userService.CreateUserAsync(currentUser, userCreateDto, cancellationToken);
+                response.Content = await _userService.CreateUserAsync(currentUser, userCreateDto, cancellationToken);
             }
             catch (Exception ex)
             {
-
+                response.Success = false;
+                _logger.Log(LogLevel.Error, ex.Message);
             }
+            if (response.Success)
+                return Ok(response.Content);
+            return BadRequest();
+
+
         }
     }
 }
