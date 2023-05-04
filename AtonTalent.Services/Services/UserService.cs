@@ -50,7 +50,7 @@ namespace AtonTalent.Services.Services
 
             if (userRequested.Admin || userRequested.Id == user.Id && userRequested.RevokedOn == default(DateTime))
             {
-                await _userRepo.UpdateAsync(updateModel, user, cancellationToken);
+                await _userRepo.UpdateAsync(updateModel, user, userRequested, cancellationToken);
                 return user;
             }
 
@@ -70,7 +70,7 @@ namespace AtonTalent.Services.Services
 
             if (userRequested.Admin || userRequested.Id == userToChangePassword.Id && userRequested.RevokedOn == default(DateTime))
             {
-                await _userRepo.ChangePasswordAsync(userToChangePassword, newPassword, cancellationToken);
+                await _userRepo.ChangePasswordAsync(userToChangePassword, newPassword, userRequested, cancellationToken);
                 return userToChangePassword;
             }
             else

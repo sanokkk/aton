@@ -26,11 +26,11 @@ namespace AtonTalent.Domain.Models
 
         public DateTime CreatedOn { get; init; }
 
-        public string CreatedBy { get; init; }
+        public string CreatedBy { get; set; }
 
-        public DateTime ModifiedOn { get; init; }
+        public DateTime ModifiedOn { get; set; }
 
-        public string ModifiedBy { get; init;}
+        public string ModifiedBy { get; set;}
 
         public DateTime RevokedOn { get; set; }
 

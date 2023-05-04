@@ -12,10 +12,10 @@ namespace AtonTalent.DAL.Interfaces
     {
         Task Add(User user);
         Task<User> GetByLoginPassAsync(LoginDto login, CancellationToken cancellationToken);
-        Task UpdateAsync(UpdateUserDto updateModel, User user, CancellationToken cancellationToken);
+        Task UpdateAsync(UpdateUserDto updateModel, User user, User requestedUser,CancellationToken cancellationToken);
 
         Task<User> GetByIdAsync(Guid id);
 
-        Task ChangePasswordAsync(User user, string newPassword, CancellationToken cancellationToken);
+        Task ChangePasswordAsync(User user, string newPassword, User requestedUser, CancellationToken cancellationToken);
     }
 }

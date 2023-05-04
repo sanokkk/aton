@@ -21,6 +21,7 @@ namespace AtonTalent.DAL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            
             modelBuilder.Entity<User>().HasData(new User()
             {
                 Id = Guid.NewGuid(),

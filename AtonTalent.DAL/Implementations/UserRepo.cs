@@ -37,21 +37,27 @@ public class UserRepo : IUserRepo
         return response;
     }
 
-    public async Task UpdateAsync(UpdateUserDto updateModel, User user, CancellationToken cancellationToken)
+    public async Task UpdateAsync(UpdateUserDto updateModel, User user, User requestedUser, CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
         user.Name = updateModel.Name ?? user.Name;
         user.Gender = updateModel.Gender ?? user.Gender;
         user.Birthday = updateModel.Birthday ?? user.Birthday;
 
+        user.ModifiedBy = requestedUser.Login;
+        user.ModifiedOn = DateTime.Now;
+
         await _db.SaveChangesAsync();
     }
 
-    public async Task ChangePasswordAsync(User user, string newPassword, CancellationToken cancellationToken)
+    public async Task ChangePasswordAsync(User user, string newPassword, User requestedUser, CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
 
         user.Password = newPassword;
+
+        user.ModifiedBy = requestedUser.Login;
+        user.ModifiedOn = DateTime.Now;
 
         await _db.SaveChangesAsync();
     }
