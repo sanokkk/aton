@@ -14,7 +14,7 @@ namespace AtonTalent.Domain.Models
 
         public string Login { get; init; }
 
-        public string Password { get; init; }
+        public string Password { get; set; }
 
         public string Name { get; set; }
 

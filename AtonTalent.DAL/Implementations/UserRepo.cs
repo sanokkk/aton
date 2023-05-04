@@ -47,8 +47,12 @@ public class UserRepo : IUserRepo
         await _db.SaveChangesAsync();
     }
 
-    public Task UpdateAsync(UpdateUserDto updateModel, User user)
+    public async Task ChangePasswordAsync(User user, string newPassword, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        cancellationToken.ThrowIfCancellationRequested();
+
+        user.Password = newPassword;
+
+        await _db.SaveChangesAsync();
     }
 }

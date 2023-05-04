@@ -38,7 +38,8 @@ namespace AtonTalentAPI.Controllers
             return BadRequest();
         }
 
-        [HttpPut("{id}")]
+        [HttpPut]
+        [Route("/Update/{id}")]
         public async Task<IActionResult> UpdateAsync(UpdateRequest request, Guid id, CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
@@ -47,6 +48,27 @@ namespace AtonTalentAPI.Controllers
             try
             {
                 response.Content = await _userService.UpdateAsync(request.currentUser, request.updateModel, id, cancellationToken);
+            }
+            catch(Exception ex)
+            {
+                _logger.Log(LogLevel.Error, ex.Message);
+                response.Success = false;
+            }
+            if (response.Success)
+                return Ok(response.Content);
+            return BadRequest();
+        }
+
+        [HttpPut]
+        [Route("/ChangePassword/{id}")]
+        public async Task<IActionResult> ChangePasswordAsync(ChangePasswordRequest request, Guid id, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var response = new Response<User>();
+            try
+            {
+                response.Content = await _userService.ChangePasswordAsync(request.CurrentUser, request.NewPassword, id, cancellationToken);
             }
             catch(Exception ex)
             {

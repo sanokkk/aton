@@ -15,5 +15,7 @@ namespace AtonTalent.DAL.Interfaces
         Task UpdateAsync(UpdateUserDto updateModel, User user, CancellationToken cancellationToken);
 
         Task<User> GetByIdAsync(Guid id);
+
+        Task ChangePasswordAsync(User user, string newPassword, CancellationToken cancellationToken);
     }
 }
