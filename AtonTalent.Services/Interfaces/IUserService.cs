@@ -17,5 +17,7 @@ namespace AtonTalent.Services.Interfaces
         Task<User> ChangePasswordAsync(LoginDto currentUser, string newPassword, Guid id, CancellationToken cancellationToken);
 
         Task<User> ChangeLoginAsync(LoginDto currentUser, string newLogin, Guid id, CancellationToken cancellationToken);
+
+        Task<User[]> GetActiveUsers(LoginDto currentUser, CancellationToken cancellationToken);
     }
 }

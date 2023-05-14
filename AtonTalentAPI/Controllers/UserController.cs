@@ -100,5 +100,26 @@ namespace AtonTalentAPI.Controllers
                 return Ok(response.Content);
             return BadRequest();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetActiveUsersAsync([FromBody]LoginDto currentUser, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var response = new Response<User[]>();
+
+            try
+            {
+                response.Content = await _userService.GetActiveUsers(currentUser, cancellationToken);
+            }
+            catch (Exception ex)
+            {
+                _logger.Log(LogLevel.Error, ex.Message);
+                response.Success = false;
+            }
+            if (response.Success)
+                return Ok(response.Content);
+            return BadRequest();
+        }
     }
 }

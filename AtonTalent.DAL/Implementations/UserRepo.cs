@@ -73,4 +73,9 @@ public class UserRepo : IUserRepo
 
         await _db.SaveChangesAsync();
     }
+
+    public async Task<User[]> GetUsersAsync() => await _db.Users
+        .Where(u => u.RevokedOn == default(DateTime))
+        .OrderBy(o => o.CreatedOn)
+        .ToArrayAsync();
 }

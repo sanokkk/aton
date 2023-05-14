@@ -97,5 +97,21 @@ namespace AtonTalent.Services.Services
                 throw new Exception($"User: {currentUser.Login} has no access.");
             }
         }
+
+        public async Task<User[]> GetActiveUsers(LoginDto currentUser, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var userRequested = await _userRepo.GetByLoginPassAsync(currentUser, cancellationToken);
+
+            if (userRequested.Admin && userRequested.RevokedOn == default(DateTime))
+            {
+                return await _userRepo.GetUsersAsync();                
+            }
+            else
+            {
+                throw new Exception($"User: {currentUser.Login} has no access.");
+            }
+        }
     }
 }
