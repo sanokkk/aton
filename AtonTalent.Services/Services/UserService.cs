@@ -32,7 +32,7 @@ namespace AtonTalent.Services.Services
                 Gender = userCreateDto.Gender,
                 Admin = userRequest.Admin ? userRequest.Admin : false,
                 Birthday = userCreateDto.Birthday,
-                CreatedOn = DateTime.Now,
+                CreatedOn = DateTime.UtcNow,
                 CreatedBy = userRequest.Login,
             };
 
@@ -72,6 +72,25 @@ namespace AtonTalent.Services.Services
             {
                 await _userRepo.ChangePasswordAsync(userToChangePassword, newPassword, userRequested, cancellationToken);
                 return userToChangePassword;
+            }
+            else
+            {
+                throw new Exception($"User: {currentUser.Login} has no access.");
+            }
+        }
+
+        public async Task<User> ChangeLoginAsync(LoginDto currentUser, string newLogin, Guid id, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var userRequested = await _userRepo.GetByLoginPassAsync(currentUser, cancellationToken);
+
+            var userToChangeLogin = await _userRepo.GetByIdAsync(id);
+
+            if (userRequested.Admin || userRequested.Id == userToChangeLogin.Id && userRequested.RevokedOn == default(DateTime))
+            {
+                await _userRepo.ChangeLoginAsync(userToChangeLogin, newLogin, userRequested, cancellationToken);
+                return userToChangeLogin;
             }
             else
             {

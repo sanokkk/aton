@@ -12,7 +12,7 @@ namespace AtonTalent.Domain.Models
     {
         public Guid Id { get; init; }
 
-        public string Login { get; init; }
+        public string Login { get; set; }
 
         public string Password { get; set; }
 

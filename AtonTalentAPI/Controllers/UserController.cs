@@ -79,5 +79,26 @@ namespace AtonTalentAPI.Controllers
                 return Ok(response.Content);
             return BadRequest();
         }
+
+        [HttpPut]
+        [Route("/ChangeLogin/{id}")]
+        public async Task<IActionResult> ChangeLoginAsync(ChangeLoginRequest request, Guid id, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var response = new Response<User>();
+            try
+            {
+                response.Content = await _userService.ChangeLoginAsync(request.CurrentUser, request.NewPassword, id, cancellationToken);
+            }
+            catch(Exception ex)
+            {
+                _logger.Log(LogLevel.Error, ex.Message);
+                response.Success = false;
+            }
+            if (response.Success)
+                return Ok(response.Content);
+            return BadRequest();
+        }
     }
 }

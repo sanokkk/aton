@@ -45,7 +45,7 @@ public class UserRepo : IUserRepo
         user.Birthday = updateModel.Birthday ?? user.Birthday;
 
         user.ModifiedBy = requestedUser.Login;
-        user.ModifiedOn = DateTime.Now;
+        user.ModifiedOn = DateTime.UtcNow;
 
         await _db.SaveChangesAsync();
     }
@@ -57,7 +57,19 @@ public class UserRepo : IUserRepo
         user.Password = newPassword;
 
         user.ModifiedBy = requestedUser.Login;
-        user.ModifiedOn = DateTime.Now;
+        user.ModifiedOn = DateTime.UtcNow;
+
+        await _db.SaveChangesAsync();
+    }
+
+    public async Task ChangeLoginAsync(User user, string newLogin, User requestedUser, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+
+        user.Login = newLogin;
+
+        user.ModifiedBy = requestedUser.Login;
+        user.ModifiedOn = DateTime.UtcNow;
 
         await _db.SaveChangesAsync();
     }
