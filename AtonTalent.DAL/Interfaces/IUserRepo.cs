@@ -1,33 +1,27 @@
 ﻿using AtonTalent.Domain.Dtos;
 using AtonTalent.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace AtonTalent.DAL.Interfaces
+namespace AtonTalent.DAL.Interfaces;
+
+public interface IUserRepo
 {
-    public interface IUserRepo
-    {
-        Task Add(User user);
-        Task<User> GetByLoginPassAsync(LoginDto login, CancellationToken cancellationToken);
-        Task UpdateAsync(UpdateUserDto updateModel, User user, User requestedUser,CancellationToken cancellationToken);
+    Task Add(User user);
+    Task<User> GetByLoginPassAsync(LoginDto login, CancellationToken cancellationToken);
+    Task UpdateAsync(UpdateUserDto updateModel, User user, User requestedUser,CancellationToken cancellationToken);
 
-        Task<User> GetByIdAsync(Guid id);
+    Task<User> GetByIdAsync(Guid id);
 
-        Task ChangePasswordAsync(User user, string newPassword, User requestedUser, CancellationToken cancellationToken);
+    Task ChangePasswordAsync(User user, string newPassword, User requestedUser, CancellationToken cancellationToken);
 
-        Task ChangeLoginAsync(User user, string newLogin, User requestedUser, CancellationToken cancellationToken);
+    Task ChangeLoginAsync(User user, string newLogin, User requestedUser, CancellationToken cancellationToken);
 
-        Task<User[]> GetUsersAsync();
+    Task<User[]> GetUsersAsync();
 
-        Task<User> GetByLoginAsync(string login);
+    Task<User> GetByLoginAsync(string login);
 
-        Task<User> SoftDelete(User userRequested, User userToDelete, CancellationToken cancellationToken);
+    Task<User> SoftDelete(User userRequested, User userToDelete, CancellationToken cancellationToken);
 
-        Task<User> FullDelete(User userToDelete, CancellationToken cancellationToken);
+    Task<User> FullDelete(User userToDelete, CancellationToken cancellationToken);
 
-        Task<User> RecoverUserAsync(User userToRecover, CancellationToken cancellationToken);
-    }
+    Task<User> RecoverUserAsync(User userToRecover, CancellationToken cancellationToken);
 }

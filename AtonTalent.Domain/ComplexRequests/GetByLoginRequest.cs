@@ -1,19 +1,13 @@
 ﻿using AtonTalent.Domain.Dtos;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace AtonTalent.Domain.ComplexRequests
+namespace AtonTalent.Domain.ComplexRequests;
+
+public class GetByLoginRequest
 {
-    public class GetByLoginRequest
-    {
-        [Required]
-        public LoginDto CurrentUser { get; set; }
+    [Required]
+    public LoginDto CurrentUser { get; set; }
 
-        [Required]
-        public string Login { get; set; }
-    }
+    [Required]
+    public string Login { get; set; }
 }

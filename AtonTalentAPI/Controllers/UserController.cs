@@ -42,6 +42,15 @@ public class UserController: ControllerBase
 
     [Authorize]
     [HttpPost]
+    [Route("Logout")]
+    public async Task<IActionResult> Logout()
+    {
+        Response.Cookies.Delete("Token");
+        return Ok();
+    }
+
+    [Authorize]
+    [HttpPost]
     public async Task<IActionResult> CreateAsync(CancellationToken cancellationToken, [FromBody]UserCreateDto model)
     {
         cancellationToken.ThrowIfCancellationRequested();
