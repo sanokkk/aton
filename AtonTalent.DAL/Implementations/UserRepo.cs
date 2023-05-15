@@ -80,4 +80,39 @@ public class UserRepo : IUserRepo
         .ToArrayAsync();
 
     public async Task<User> GetByLoginAsync(string login) => await _db.Users.FirstOrDefaultAsync(f => f.Login == login);
+
+    public async Task<User> SoftDelete(User userRequested, User userToDelete, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+
+        userToDelete.RevokedOn = DateTime.UtcNow;
+        userToDelete.RevokedBy = userRequested.Login;
+
+        await _db.SaveChangesAsync();
+
+        return userToDelete;
+    }
+
+    public async Task<User> FullDelete(User userToDelete, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+
+        _db.Users.Remove(userToDelete);
+
+        await _db.SaveChangesAsync();
+
+        return userToDelete;
+    }
+
+    public async Task<User> RecoverUserAsync(User userToRecover, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+
+        userToRecover.RevokedOn = default(DateTime);
+        userToRecover.RevokedBy = default(string);
+
+        await _db.SaveChangesAsync();
+
+        return userToRecover;
+    }
 }

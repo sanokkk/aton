@@ -23,5 +23,11 @@ namespace AtonTalent.DAL.Interfaces
         Task<User[]> GetUsersAsync();
 
         Task<User> GetByLoginAsync(string login);
+
+        Task<User> SoftDelete(User userRequested, User userToDelete, CancellationToken cancellationToken);
+
+        Task<User> FullDelete(User userToDelete, CancellationToken cancellationToken);
+
+        Task<User> RecoverUserAsync(User userToRecover, CancellationToken cancellationToken);
     }
 }

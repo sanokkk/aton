@@ -165,6 +165,8 @@ namespace AtonTalentAPI.Controllers
         [Route("/GetOverAge/{age}")]
         public async Task<IActionResult> GetOverAgeAsync([FromBody]LoginDto currentUser, int age, CancellationToken cancellationToken)
         {
+            cancellationToken.ThrowIfCancellationRequested();
+
             var response = new Response<User[]>();
             try
             {
@@ -179,5 +181,47 @@ namespace AtonTalentAPI.Controllers
                 return Ok(response.Content);
             return BadRequest();
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteUserAsync([FromBody]DeleteUserRequest request, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var response = new Response<User>();
+            try
+            {
+                response.Content = await _userService.DeleteUserAsync(request.CurrentUser, request.Login, request.DeleteType, cancellationToken);
+            }
+            catch (Exception ex)
+            {
+                _logger.Log(LogLevel.Error, ex.Message);
+                response.Success = false;
+            }
+            if (response.Success)
+                return Ok(response.Content);
+            return BadRequest();
+        }
+
+        [HttpPost]
+        [Route("/RecoverUser")]
+        public async Task<IActionResult> RecoverUserAsync(RecoverUserRequest request, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var response = new Response<User>();
+            try
+            {
+                response.Content = await _userService.RecoverUserAsync(request.CurrentUser, request.Id, cancellationToken);
+            }
+            catch (Exception ex)
+            {
+                _logger.Log(LogLevel.Error, ex.Message);
+                response.Success = false;
+            }
+            if (response.Success)
+                return Ok(response.Content);
+            return BadRequest();
+        }
+
     }
 }

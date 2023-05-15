@@ -1,4 +1,5 @@
 ﻿using AtonTalent.Domain.Dtos;
+using AtonTalent.Domain.Enums;
 using AtonTalent.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -25,5 +26,9 @@ namespace AtonTalent.Services.Interfaces
         Task<User> GetByLoginPass(LoginDto currentUser, LoginDto UserToGet, CancellationToken cancellationToken);
 
         Task<User[]> GetOverAge(LoginDto currentUser, int age, CancellationToken cancellationToken);
+
+        Task<User> DeleteUserAsync(LoginDto currentUser, string login, DeleteType deleteType, CancellationToken cancellationToken);
+
+        Task<User> RecoverUserAsync(LoginDto currentUser, Guid id, CancellationToken cancellationToken);
     }
 }

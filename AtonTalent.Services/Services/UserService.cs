@@ -1,5 +1,6 @@
 ﻿using AtonTalent.DAL.Interfaces;
 using AtonTalent.Domain.Dtos;
+using AtonTalent.Domain.Enums;
 using AtonTalent.Domain.Models;
 using AtonTalent.Services.Interfaces;
 using AutoMapper;
@@ -153,6 +154,40 @@ namespace AtonTalent.Services.Services
                 return (await _userRepo.GetUsersAsync())
                     .Where(u => (DateTime.UtcNow - u.Birthday.Value).TotalDays / 365.25 > age)
                     .ToArray(); ;
+            }
+            else
+                throw new Exception($"User: {currentUser.Login} has no access.");
+        }
+
+        public async Task<User> DeleteUserAsync(LoginDto currentUser, string login, DeleteType deleteType, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var userRequested = await _userRepo.GetByLoginPassAsync(currentUser, cancellationToken);
+
+            if (userRequested.Admin)
+            {
+                var userToDelete = await _userRepo.GetByLoginAsync(login);
+
+                return (deleteType == DeleteType.Full) ?
+                    await _userRepo.FullDelete(userToDelete, cancellationToken)
+                    : await _userRepo.SoftDelete(userRequested, userToDelete, cancellationToken);
+            }
+            else
+                throw new Exception($"User: {currentUser.Login} has no access.");
+        }
+
+        public async Task<User> RecoverUserAsync(LoginDto currentUser, Guid id, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var userRequested = await _userRepo.GetByLoginPassAsync(currentUser, cancellationToken);
+
+            if (userRequested.Admin)
+            {
+                var userToRecover = await _userRepo.GetByIdAsync(id);
+
+                return await _userRepo.RecoverUserAsync(userToRecover, cancellationToken);
             }
             else
                 throw new Exception($"User: {currentUser.Login} has no access.");
