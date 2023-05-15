@@ -30,5 +30,7 @@ namespace AtonTalent.Services.Interfaces
         Task<User> DeleteUserAsync(LoginDto currentUser, string login, DeleteType deleteType, CancellationToken cancellationToken);
 
         Task<User> RecoverUserAsync(LoginDto currentUser, Guid id, CancellationToken cancellationToken);
+
+        Task<User> GetSelfUser(LoginDto currentUser, CancellationToken cancellationToken);
     }
 }

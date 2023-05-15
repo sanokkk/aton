@@ -3,6 +3,8 @@ using AtonTalent.DAL.Implementations;
 using AtonTalent.DAL.Interfaces;
 using AtonTalent.Services.Interfaces;
 using AtonTalent.Services.Services;
+using AtonTalentAPI.AuthHandler;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +17,8 @@ builder.Services.AddLogging(l =>
 {
     l.AddConsole();
 });
+
+builder.Services.AddAuthentication("CookieAuth").AddScheme<AuthenticationSchemeOptions, CookieAuthHandler>("CookieAuth", null);
 
 builder.Services.AddRouting(r =>
 {

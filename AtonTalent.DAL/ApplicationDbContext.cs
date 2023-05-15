@@ -13,15 +13,19 @@ namespace AtonTalent.DAL
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             :base(options) 
         {
+            //Database.EnsureDeleted();
             Database.EnsureCreated();
         }
 
-        public DbSet<User> Users;
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            
+
+            var Birth = new DateTime(year: 2002, month: 9, day: 18);
+
+
             modelBuilder.Entity<User>().HasData(new User()
             {
                 Id = Guid.NewGuid(),
@@ -29,9 +33,9 @@ namespace AtonTalent.DAL
                 Password = "password",
                 Name = "Alexander",
                 Gender = 1,
-                Birthday = new DateTime(year: 2002, month: 9, day: 18),
+                Birthday = DateTime.SpecifyKind(Birth, DateTimeKind.Utc),
                 Admin = true,
-                CreatedOn = DateTime.Now,
+                CreatedOn = DateTime.UtcNow,
                 CreatedBy = "sanokkk",
             });
             modelBuilder.Entity<User>().HasKey(x => x.Id);

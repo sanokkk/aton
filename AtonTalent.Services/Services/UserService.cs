@@ -192,5 +192,11 @@ namespace AtonTalent.Services.Services
             else
                 throw new Exception($"User: {currentUser.Login} has no access.");
         }
+
+        public async Task<User> GetSelfUser(LoginDto currentUser, CancellationToken cancellationToken)
+        {
+            return await _userRepo.GetByLoginPassAsync(currentUser, cancellationToken);
+        }
     }
+
 }

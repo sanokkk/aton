@@ -31,7 +31,7 @@ public class UserRepo : IUserRepo
     public async Task<User> GetByLoginPassAsync(LoginDto login, CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
-        var response = await _db.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Login == login.Login && u.Password == login.Password);
+        var response = await _db.Users.FirstOrDefaultAsync(u => u.Login == login.Login && u.Password == login.Password);
         if (response == null)
             throw new ArgumentNullException(nameof(response));
         return response;
@@ -115,4 +115,6 @@ public class UserRepo : IUserRepo
 
         return userToRecover;
     }
+
+    
 }

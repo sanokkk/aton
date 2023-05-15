@@ -11,9 +11,6 @@ namespace AtonTalent.Domain.ComplexRequests
     public class GetByLoginPassRequest
     {
         [Required]
-        public LoginDto UserRequested { get; init; }
-
-        [Required]
         public LoginDto UserToGet { get; init; }
     }
 }
