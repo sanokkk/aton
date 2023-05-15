@@ -14,8 +14,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtonTalent.DAL", "AtonTalent.DAL\AtonTalent.DAL.csproj", "{AC7DE90A-8ADA-4F38-82F9-4F7EBDF3ACA8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AtonTalent.Services", "AtonTalent.Services", "{F6A1F435-ADC1-456B-9AEF-C9A4CAFA9847}"
+	ProjectSection(SolutionItems) = preProject
+		AtonTalent.Domain\Models\User.cs = AtonTalent.Domain\Models\User.cs
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtonTalent.Services", "AtonTalent.Services\AtonTalent.Services.csproj", "{A08C9DB6-0D21-45A2-B674-0DF91CD000C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtonTalent.Services", "AtonTalent.Services\AtonTalent.Services.csproj", "{A08C9DB6-0D21-45A2-B674-0DF91CD000C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

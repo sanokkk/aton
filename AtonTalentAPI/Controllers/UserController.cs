@@ -139,5 +139,45 @@ namespace AtonTalentAPI.Controllers
                 return Ok(response.Content);
             return BadRequest();
         }
+
+        [HttpGet]
+        [Route("/GetByLoginPass")]
+        public async Task<IActionResult> GetByLoginPassAsync([FromBody]GetByLoginPassRequest request, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            
+            var response = new Response<User>();
+            try
+            {
+                response.Content = await _userService.GetByLoginPass(request.UserRequested, request.UserToGet, cancellationToken);
+            }
+            catch (Exception ex)
+            {
+                _logger.Log(LogLevel.Error, ex.Message);
+                response.Success = false;
+            }
+            if (response.Success)
+                return Ok(response.Content);
+            return BadRequest();
+        }
+
+        [HttpGet]
+        [Route("/GetOverAge/{age}")]
+        public async Task<IActionResult> GetOverAgeAsync([FromBody]LoginDto currentUser, int age, CancellationToken cancellationToken)
+        {
+            var response = new Response<User[]>();
+            try
+            {
+                response.Content = await _userService.GetOverAge(currentUser, age, cancellationToken);
+            }
+            catch (Exception ex)
+            {
+                _logger.Log(LogLevel.Error, ex.Message);
+                response.Success = false;
+            }
+            if (response.Success)
+                return Ok(response.Content);
+            return BadRequest();
+        }
     }
 }

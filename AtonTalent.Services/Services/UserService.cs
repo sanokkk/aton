@@ -129,5 +129,33 @@ namespace AtonTalent.Services.Services
             }
             throw new Exception($"User: {currentUser.Login} has no access.");
         }
+
+        public async Task<User> GetByLoginPass(LoginDto currentUser, LoginDto UserToGet, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            if (currentUser.Login == UserToGet.Login && currentUser.Password == UserToGet.Password)
+            {
+                return await _userRepo.GetByLoginPassAsync(currentUser, cancellationToken);
+            }
+            else 
+                throw new Exception($"User: {currentUser.Login} has no access.");
+        }
+
+        public async Task<User[]> GetOverAge(LoginDto currentUser, int age, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var userRequested = await _userRepo.GetByLoginPassAsync(currentUser, cancellationToken);
+
+            if (userRequested.Admin)
+            {
+                return (await _userRepo.GetUsersAsync())
+                    .Where(u => (DateTime.UtcNow - u.Birthday.Value).TotalDays / 365.25 > age)
+                    .ToArray(); ;
+            }
+            else
+                throw new Exception($"User: {currentUser.Login} has no access.");
+        }
     }
 }

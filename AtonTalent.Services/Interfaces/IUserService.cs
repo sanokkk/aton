@@ -21,5 +21,9 @@ namespace AtonTalent.Services.Interfaces
         Task<User[]> GetActiveUsers(LoginDto currentUser, CancellationToken cancellationToken);
 
         Task<UserByLogin> GetByLoginAsync(LoginDto currentUser, string login, CancellationToken cancellationToken);
+
+        Task<User> GetByLoginPass(LoginDto currentUser, LoginDto UserToGet, CancellationToken cancellationToken);
+
+        Task<User[]> GetOverAge(LoginDto currentUser, int age, CancellationToken cancellationToken);
     }
 }
