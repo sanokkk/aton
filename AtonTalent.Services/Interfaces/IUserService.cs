@@ -19,5 +19,7 @@ namespace AtonTalent.Services.Interfaces
         Task<User> ChangeLoginAsync(LoginDto currentUser, string newLogin, Guid id, CancellationToken cancellationToken);
 
         Task<User[]> GetActiveUsers(LoginDto currentUser, CancellationToken cancellationToken);
+
+        Task<UserByLogin> GetByLoginAsync(LoginDto currentUser, string login, CancellationToken cancellationToken);
     }
 }

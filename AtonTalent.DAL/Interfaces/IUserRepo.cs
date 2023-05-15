@@ -21,5 +21,7 @@ namespace AtonTalent.DAL.Interfaces
         Task ChangeLoginAsync(User user, string newLogin, User requestedUser, CancellationToken cancellationToken);
 
         Task<User[]> GetUsersAsync();
+
+        Task<User> GetByLoginAsync(string login);
     }
 }

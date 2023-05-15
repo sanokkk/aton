@@ -2,6 +2,7 @@
 using AtonTalent.Domain.Dtos;
 using AtonTalent.Domain.Models;
 using AtonTalent.Services.Interfaces;
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,11 @@ namespace AtonTalent.Services.Services
     public class UserService: IUserService
     {
         private readonly IUserRepo _userRepo;
-        public UserService(IUserRepo userRepo)
+        private readonly IMapper _mapper;
+        public UserService(IUserRepo userRepo, IMapper mapper)
         {
             _userRepo = userRepo;
+            _mapper = mapper;
         }
 
         public async Task<User> CreateUserAsync(LoginDto currentUser, UserCreateDto userCreateDto, CancellationToken cancellationToken)
@@ -112,6 +115,19 @@ namespace AtonTalent.Services.Services
             {
                 throw new Exception($"User: {currentUser.Login} has no access.");
             }
+        }
+
+        public async Task<UserByLogin> GetByLoginAsync(LoginDto currentUser, string login, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var userRequested = await _userRepo.GetByLoginPassAsync(currentUser, cancellationToken);
+
+            if (userRequested.Admin)
+            {
+                return _mapper.Map<UserByLogin>(await _userRepo.GetByLoginAsync(login));
+            }
+            throw new Exception($"User: {currentUser.Login} has no access.");
         }
     }
 }

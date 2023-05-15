@@ -78,4 +78,6 @@ public class UserRepo : IUserRepo
         .Where(u => u.RevokedOn == default(DateTime))
         .OrderBy(o => o.CreatedOn)
         .ToArrayAsync();
+
+    public async Task<User> GetByLoginAsync(string login) => await _db.Users.FirstOrDefaultAsync(f => f.Login == login);
 }

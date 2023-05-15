@@ -121,5 +121,23 @@ namespace AtonTalentAPI.Controllers
                 return Ok(response.Content);
             return BadRequest();
         }
+
+        [HttpGet("{login}")]
+        public async Task<IActionResult> GetByLoginAsync([FromBody]GetByLoginRequest request, CancellationToken cancellationToken)
+        {
+            var response = new Response<UserByLogin>();
+            try
+            {
+                response.Content = await _userService.GetByLoginAsync(request.CurrentUser, request.Login, cancellationToken);
+            }
+            catch (Exception ex)
+            {
+                _logger.Log(LogLevel.Error, ex.Message);
+                response.Success = false;
+            }
+            if (response.Success)
+                return Ok(response.Content);
+            return BadRequest();
+        }
     }
 }
